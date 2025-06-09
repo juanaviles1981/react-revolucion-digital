@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Team Building - Empresa de Integración</title>
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">Logo</div>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="#">HOME</a></li>
+        <li><a href="#QUIENES">QUIENES SOMOS</a></li>
+        <li><a href="#CONTACTO">CONTACTO</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-container">
+        <img src="./img/1-Imagen de Empresarios.jpg" alt="Equipo de trabajo en reunión" class="hero-image" />
+      </div>
+      <div class="hero-text">
+        <h1 class="hero-title" id="QUIENES">Empresa de Team Building</h1>
+        <p class="hero-description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam quisquam quod nemo, odio sint aspernatur.
+        </p>
+        <button class="hero-button">Aprender más</button>
+      </div>
+    </section>
+
+    <section class="servicios-contenedor">
+      <h2>Servicios que ofrecemos</h2>
+      <p class="servicios-texto">Desarrollamos una solución integrada para promover el trabajo en equipo.</p>
+      <div class="servicios-grid">
+        <div class="servicio">
+          <img src="./img/2-Logo 1.jpg" alt="Aventura al aire libre" />
+          <h3>Aventura al aire libre</h3>
+          <p>Duis aute irure dolor in reprehenderit...</p>
+        </div>
+        <div class="servicio">
+          <img src="./img/3-Logo 2.jpg" alt="Aventura en interiores" />
+          <h3>Aventura en interiores</h3>
+          <p>Duis aute irure dolor in reprehenderit...</p>
+        </div>
+        <div class="servicio">
+          <img src="./img/4-Logo 3.jpg" alt="Formación de equipos virtuales" />
+          <h3>Formación de equipos virtuales</h3>
+          <p>Duis aute irure dolor in reprehenderit...</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-contacto">
+    <div class="footer-columna1">
+      <h3 class="contacto2">Contáctenos</h3>
+      <h2>ENVIENOS UN GRÁFICO</h2>
+      <p>Nuestro amable equipo responderá</p>
+      <p>hi@ourteam.com</p>
+      <h2>OFICINA</h2>
+      <p>Ven a visitarnos</p>
+      <p>Rock Street 123</p>
+      <h2>TELÉFONO</h2>
+      <p>Lunes a Viernes de 8 a 17hs</p>
+      <p>123-435678</p>
+    </div>
+
+    <div class="footer-columna2" id="CONTACTO">
+      <h3 class="contacto2">Contáctenos</h3>
+      <p class="contacto2-texto">Puede comunicarse con nosotros en cualquier momento a través de hi@ourcompany.com</p>
+      <form>
+        <div class="name-email">
+          <div>
+            <label for="nombre">Nombre</label><br>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
+          </div>
+          <div>
+            <label for="email">Email</label><br>
+            <input type="email" id="email" name="email" placeholder="Tu email" required />
+          </div>
+        </div>
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" placeholder="¿Cómo podemos ayudarte?" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  </footer>
+</body>
+</html>

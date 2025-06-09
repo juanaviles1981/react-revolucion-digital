@@ -1,0 +1,13 @@
+.card {
+  border: 0.5px solid brown;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.card h3 {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+.card p {
+  font-weight: bold;
+  color: blueviolet;
+}
