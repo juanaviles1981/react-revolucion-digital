@@ -11,7 +11,7 @@ const newsData = [
       titulo: "Te asustaste con la noticia de arriba",
       descripcion: "Y claro, alguien va a tener que arreglar las cagadas de la IA.",
       fuente: "FakeNews",
-      imagen: "https://thumbs.dreamstime.com/z/robot-y-obrero-en-los-trabajadores-de-la-construcci%C3%B3n-hardhats-pie-juntos-concepto-inteligencia-artificial-ilustraci%C3%B3n-vectorial-220708252.jpg?ct=jpeg"
+      // imagen: "https://thumbs.dreamstime.com/z/robot-y-obrero-en-los-trabajadores-de-la-construcci%C3%B3n-hardhats-pie-juntos-concepto-inteligencia-artificial-ilustraci%C3%B3n-vectorial-220708252.jpg?ct=jpeg"
     },
       {
       id: 3,
