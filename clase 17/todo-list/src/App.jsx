@@ -5,11 +5,7 @@ import AddTodo from "./components/AddTodo";
 
 function App() {
   // Estado de las tareas
-  const [tasks, setTasks] = useState([
-    // { id: 1, name: "Estudiar React", completed: false },
-    // { id: 2, name: "Hacer Aplicacion de tareas", completed: false },
-    // { id: 3, name: "Avanzar en React", completed: false },
-  ]);
+  const [tasks, setTasks] = useState([]);
 
   //Funcion que agrega una tarea
   const handleAddTodo = (text) => {
@@ -21,7 +17,7 @@ function App() {
     setTasks([...tasks, newTask]);
   };
   //Funcion que marca como completada la tarea
-  const handleCompleted = (id) => {
+  const toggleCompleted = (id) => {
     setTasks(
       tasks.map((task) =>
         task.id === id ? { ...task, completed: !task.completed } : task
@@ -40,7 +36,7 @@ function App() {
       <AddTodo handleAddTodo={handleAddTodo} />
       <TodoList
         tasks={tasks}
-        handleCompleted={handleCompleted}
+        toggleCompleted={toggleCompleted}
         handleDelete={handleDelete}
       />
     </>

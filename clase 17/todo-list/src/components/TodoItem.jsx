@@ -1,8 +1,8 @@
-const TodoItem = ({ task, handleCompleted, handleDelete })=>{
+const TodoItem = ({ task, toggleCompleted, handleDelete })=>{
 console.log(task)
     return (
         <div>
-            <li key={task.id}>
+            <li>
                 
                 <span
                 style={{textDecoration: task.completed? "line-through" : "none"}}>
@@ -10,7 +10,7 @@ console.log(task)
                 </span>
                 
                 
-                <button onClick={()=> handleCompleted(task.id)}>Completada</button>
+                <button onClick={()=> toggleCompleted(task.id)}>Completada</button>
                 <button onClick={()=> handleDelete(task.id)}>Eliminar</button>
             </li>
         </div>
