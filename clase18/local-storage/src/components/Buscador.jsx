@@ -1,40 +1,37 @@
-import React from "react";
+import { useState } from "react";
 
-export default function Buscador() {
-  let auto = {
-    duenio: "Juan",
-    puertas: 4,
-    patente: "ABC123",
-    dueniosAnteriores: ["Pedro", "Jose"],
-  };
-  console.log("Objeto normal: ", auto);
+function Buscador() {
+  let [tareas, setTareas] = useState([
+    "Aprender React",
+    "Hacer Ejercicios",
+    "Leer un libro",
+    "salir a caminar",
+    "Salir de joda",
+  ]);
 
-  //let jsonAuto = JSON.stringify(auto);
+  let [busqueda, setBusqueda] = useState("");
 
-  //console.log("JSON stringify", jsonAuto);
+  let tareasFiltradas = tareas.filter((tarea) => {
+    return tarea.toLowerCase().includes(busqueda.toLowerCase());
+  });
 
-  //console.log("JSON parse", JSON.parse(jsonAuto));
+  function modificarBusqueda(input) {
+    setBusqueda(input.target.value);
+  }
 
-
-//   var textoTmp = "Revolucion Digital"
-
-//   localStorage.setItem("Nombre llave",textoTmp);
-
-
-  let jsonAuto = JSON.stringify(auto)
-
-  localStorage.setItem("objetoAuto", jsonAuto)
-
-  
-  console.log(localStorage.getItem("objetoAuto")) //Devuelve el JSON del objeto
-  
-  let autoLocalStorage = localStorage.getItem("objetoAuto")
-  console.log(JSON.parse(autoLocalStorage)) //Se parsea a Objeto
-  
-
-  // Usos
-  // Inicio de sesion 
-  // Carrito de compras
-  // Modo oscuro / claro
-  return <div>Buscador</div>;
+  return (
+    <>
+      <input type="text" onChange={modificarBusqueda} value={busqueda} />
+      <ul>
+        {tareasFiltradas.length > 0 ? (
+          tareasFiltradas.map((tareaFiltrada) => (
+            <li key={tareaFiltrada}>{tareaFiltrada}</li>
+          ))
+        ) : (
+          <li>No se encontraron resultados</li>
+        )}
+      </ul>
+    </>
+  );
 }
+export default Buscador;
