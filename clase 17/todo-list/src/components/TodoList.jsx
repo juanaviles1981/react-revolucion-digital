@@ -2,7 +2,7 @@ import TodoItem from "./TodoItem";
 
 const TodoList = ({ tasks, toggleCompleted, handleDelete }) => {
   return (
-    <div>
+    <div style={{minHeight:"300px"}}>
       <ul>
         {tasks.map((task) => (
           <TodoItem

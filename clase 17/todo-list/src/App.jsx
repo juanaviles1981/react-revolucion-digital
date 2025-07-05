@@ -5,16 +5,28 @@ import AddTodo from "./components/AddTodo";
 
 function App() {
   // Estado de las tareas
-  const [tasks, setTasks] = useState([]);
+  // const [tasks, setTasks] = useState([]);
+  // Llamada desde local storage
+
+  const [tasks, setTasks] = useState(() => {
+    const guardado = localStorage.getItem("tareas");
+    return guardado ? JSON.parse(guardado) : [];
+  });
 
   //Funcion que agrega una tarea
   const handleAddTodo = (text) => {
+    if (text === "") return;
+
     const newTask = {
       id: Date.now(),
       name: text,
       completed: false,
     };
-    setTasks([...tasks, newTask]);
+    const updatedTasks = [...tasks, newTask];
+    setTasks(updatedTasks);
+  
+    // Agregar al local storage (no se pedia pero lo queria aprobar)
+    localStorage.setItem("tareas", JSON.stringify(updatedTasks));
   };
   //Funcion que marca como completada la tarea
   const toggleCompleted = (id) => {
@@ -39,6 +51,7 @@ function App() {
         toggleCompleted={toggleCompleted}
         handleDelete={handleDelete}
       />
+      <p>TODO APP - Juan Aviles </p>
     </>
   );
 }

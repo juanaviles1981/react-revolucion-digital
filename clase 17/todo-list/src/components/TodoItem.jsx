@@ -1,21 +1,28 @@
-const TodoItem = ({ task, toggleCompleted, handleDelete })=>{
-console.log(task)
+const TodoItem = ({ task, toggleCompleted, handleDelete }) => {
     return (
-        <div>
-            <li>
-                
-                <span
-                style={{textDecoration: task.completed? "line-through" : "none"}}>
-                {task.name}
-                </span>
-                
-                
-                <button onClick={()=> toggleCompleted(task.id)}>Completada</button>
-                <button onClick={()=> handleDelete(task.id)}>Eliminar</button>
-            </li>
-        </div>
-    )
-
-}
-
-export default TodoItem
+      <li style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "0.5rem" }}>
+        <input
+          type="checkbox"
+          checked={task.completed}
+          onChange={() => toggleCompleted(task.id)}
+        />
+        <span
+          style={{
+            textDecoration: task.completed ? "line-through" : "none",
+            // flexGrow: 1
+          }}
+        >
+          {task.name}
+        </span>
+        <span
+          style={{ cursor: "pointer" }}
+          onClick={() => handleDelete(task.id)}
+        >
+          ❌
+        </span>
+      </li>
+    );
+  };
+  
+  export default TodoItem;
+  

@@ -7,7 +7,6 @@ const AddTodo = ({ handleAddTodo }) => {
     setNewTaskText("");
   };
 
-
   return (
     <div>
       <input
@@ -16,7 +15,12 @@ const AddTodo = ({ handleAddTodo }) => {
         value={newTaskText}
         onChange={(e) => setNewTaskText(e.target.value)}
       />
-      <button onClick={handleAdd}>Agregar Tarea</button>
+      <button
+        style={{ backgroundColor: "#333", color: "whitesmoke" }}
+        onClick={handleAdd}
+      >
+        Agregar Tarea
+      </button>
     </div>
   );
 };
