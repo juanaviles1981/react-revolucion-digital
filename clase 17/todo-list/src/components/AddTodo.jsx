@@ -17,12 +17,7 @@ const AddTodo = ({ handleAddTodo }) => {
         value={newTaskText}
         onChange={(e) => setNewTaskText(e.target.value)}
       />
-      <button
-
-        onClick={handleAdd}
-      >
-        Agregar Tarea
-      </button>
+      <button onClick={handleAdd}>Agregar Tarea</button>
     </div>
   );
 };

@@ -1,30 +1,26 @@
+import "./TodoItem.css";
+
 const TodoItem = ({ task, toggleCompleted, handleDelete }) => {
-    return (
-      <li style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "0.5rem" }}>
-        <input
-          type="checkbox"
-          checked={task.completed}
-          onChange={() => toggleCompleted(task.id)}
-        />
-        <span
-          style={{
-            textDecoration: task.completed ? "line-through" : "none",
-            flexGrow: 1,
-            padding: "10px",
-            color: "#333"
-          }}
-        >
-          {task.name}
-        </span>
-        <span
-          style={{ cursor: "pointer" }}
-          onClick={() => handleDelete(task.id)}
-        >
-          ❌
-        </span>
-      </li>
-    );
-  };
-  
-  export default TodoItem;
-  
+  return (
+    <li className="todo-item">
+      <input
+        type="checkbox"
+        className="todo-checkbox"
+        checked={task.completed}
+        onChange={() => toggleCompleted(task.id)}
+      />
+      <span className={`todo-text ${task.completed ? 'completed' : ''}`}>
+        {task.name}
+      </span>
+      <button 
+        className="delete-button"
+        onClick={() => handleDelete(task.id)}
+        aria-label="Eliminar tarea"
+      >
+        ❌
+      </button>
+    </li>
+  );
+};
+
+export default TodoItem;

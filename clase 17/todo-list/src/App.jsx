@@ -2,17 +2,19 @@ import { useState } from "react";
 import "./App.css";
 import TodoList from "./components/TodoList";
 import AddTodo from "./components/AddTodo";
+import Filter from "./components/Filter";
 
 function App() {
-  // Estado de las tareas
-  // const [tasks, setTasks] = useState([]);
-  // Llamada desde local storage
+   // Llamada desde local storage
 
   const [tasks, setTasks] = useState(() => {
     const guardado = localStorage.getItem("tareas");
     return guardado ? JSON.parse(guardado) : [];
   });
 
+  // Estado para mostrar tareas pendientes
+  const [mostrarActivas, setMostrarActivas] = useState(false);
+  
   //Funcion que agrega una tarea
   const handleAddTodo = (text) => {
     if (text === "") return;
@@ -42,12 +44,20 @@ function App() {
     setTasks(tasks.filter((task) => task.id !== id));
   };
 
-  return (
+// Filtrar
+const filteredTasks = mostrarActivas 
+    ? tasks.filter(task => !task.completed) 
+    : tasks;
+
+    return (
     <>
       <h1 className="title">TODO LIST</h1>
       <AddTodo handleAddTodo={handleAddTodo} />
+      <Filter 
+      mostrarActivas={mostrarActivas}
+      setMostrarActivas={setMostrarActivas}/>  
       <TodoList
-        tasks={tasks}
+        tasks={filteredTasks}
         toggleCompleted={toggleCompleted}
         handleDelete={handleDelete}
       />
