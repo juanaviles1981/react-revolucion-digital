@@ -9,7 +9,9 @@ const TodoItem = ({ task, toggleCompleted, handleDelete }) => {
         <span
           style={{
             textDecoration: task.completed ? "line-through" : "none",
-            // flexGrow: 1
+            flexGrow: 1,
+            padding: "10px",
+            color: "#333"
           }}
         >
           {task.name}

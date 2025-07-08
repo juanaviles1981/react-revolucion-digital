@@ -1,3 +1,5 @@
+import "./AddTodo.css";
+
 import { useState } from "react";
 const AddTodo = ({ handleAddTodo }) => {
   const [newTaskText, setNewTaskText] = useState("");
@@ -16,7 +18,7 @@ const AddTodo = ({ handleAddTodo }) => {
         onChange={(e) => setNewTaskText(e.target.value)}
       />
       <button
-        style={{ backgroundColor: "#333", color: "whitesmoke" }}
+
         onClick={handleAdd}
       >
         Agregar Tarea

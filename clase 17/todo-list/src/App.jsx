@@ -44,14 +44,13 @@ function App() {
 
   return (
     <>
-      <h1>ToDo List</h1>
+      <h1 className="title">TODO LIST</h1>
       <AddTodo handleAddTodo={handleAddTodo} />
       <TodoList
         tasks={tasks}
         toggleCompleted={toggleCompleted}
         handleDelete={handleDelete}
       />
-      <p>TODO APP - Juan Aviles </p>
     </>
   );
 }
