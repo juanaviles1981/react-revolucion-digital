@@ -1,17 +1,19 @@
 import { useState } from "react";
 import "./ReparacionesForm.css";
 
-export function ReparacionesForm() {
-  const [reparaciones, setReparaciones] = useState([]);
-  const [modoOscuro, setModoOscuro] = useState(false);
-
+export function ReparacionesForm({
+  reparaciones,
+  setReparaciones,
+  modoOscuro,
+  setModoOscuro,
+}) {
   const [formulario, setFormulario] = useState({
     fecha: "",
     cliente: "",
     dispositivo: "celular",
     problema: "",
     estado: "pendiente",
-    importe: ""
+    importe: "",
   });
 
   const handleChange = (e) => {
@@ -28,12 +30,15 @@ export function ReparacionesForm() {
       dispositivo: "celular",
       problema: "",
       estado: "pendiente",
-      importe: ""
+      importe: "",
+      Relevancia: "",
     });
   };
 
   return (
-    <div className={`reparaciones-contenedor ${modoOscuro ? "modo-oscuro" : ""}`}>
+    <div
+      className={`reparaciones-contenedor ${modoOscuro ? "modo-oscuro" : ""}`}
+    >
       <div style={{ textAlign: "right", marginBottom: "1rem" }}>
         <button onClick={() => setModoOscuro(!modoOscuro)} className="boton">
           {modoOscuro ? "☀️" : "🌙"}
@@ -41,7 +46,9 @@ export function ReparacionesForm() {
       </div>
 
       <h1 className="titulo">CRN Reparaciones</h1>
-      <p className="subtitulo">Registro de reparaciones de dispositivos electrónicos.</p>
+      <p className="subtitulo">
+        Registro de reparaciones de dispositivos electrónicos.
+      </p>
 
       <form onSubmit={handleSubmit} className="reparaciones-formulario">
         <input
@@ -100,23 +107,20 @@ export function ReparacionesForm() {
           placeholder="Importe"
           className="form-input"
         />
-        <button type="submit" className="boton">Cargar reparación</button>
-      </form>
 
-      <div className="lista-reparaciones">
-        <h2 className="seccion-titulo">Reparaciones registradas</h2>
-        <ul className="reparaciones-lista">
-          {reparaciones.map((reparacion, index) => (
-            <li key={index} className="reparacion-item">
-              <p><strong>Cliente:</strong> {reparacion.cliente}</p>
-              <p><strong>Dispositivo:</strong> {reparacion.dispositivo}</p>
-              <p><strong>Estado:</strong> {reparacion.estado}</p>
-            </li>
-          ))}
-        </ul>
-      </div>
+        <select
+          name="importancia"
+          value={formulario.importancia}
+          onChange={handleChange}
+          className="form-select"
+        >
+          <option value="urgente">Urgente</option>
+          <option value="no-urgente">NO urgente</option>
+        </select>
+        <button type="submit" className="boton">
+          Cargar reparación
+        </button>
+      </form>
     </div>
   );
 }
-
-
