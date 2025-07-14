@@ -5,7 +5,6 @@ export function ReparacionesForm({
   reparaciones,
   setReparaciones,
   modoOscuro,
-  setModoOscuro,
 }) {
   const [formulario, setFormulario] = useState({
     fecha: "",
@@ -39,13 +38,7 @@ export function ReparacionesForm({
     <div
       className={`reparaciones-contenedor ${modoOscuro ? "modo-oscuro" : ""}`}
     >
-      <div style={{ textAlign: "right", marginBottom: "1rem" }}>
-        <button onClick={() => setModoOscuro(!modoOscuro)} className="boton">
-          {modoOscuro ? "☀️" : "🌙"}
-        </button>
-      </div>
-
-      <h1 className="titulo">CRN Reparaciones</h1>
+      <h1 className="titulo">TECNO Reparaciones</h1>
       <p className="subtitulo">
         Registro de reparaciones de dispositivos electrónicos.
       </p>

@@ -84,7 +84,7 @@ export const HeroSection = ({ onEnter }) => {
         
         <div style={contentStyle}>
           <h1 className="hero-title" style={titleStyle}>
-            CRN
+            TECNO
           </h1>
           <div style={dividerStyle}></div>
           <p className="hero-subtitle" style={subtitleStyle}>

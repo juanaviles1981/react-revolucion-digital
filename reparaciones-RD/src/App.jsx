@@ -1,14 +1,37 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { HeroSection } from "./components/Hero";
 import { ReparacionesForm } from "./components/ReparacionesForm";
 import ReparacionesInforme  from "./components/ReparacionesInforme";
 import { Navbar } from "./components/Navbar";
 
 function App() {
+  //Estado para mostrar el Hero al comienzo
   const [showHero, setShowHero] = useState(true);
-  const [vista, setVista] = useState("form"); // 'form' o 'informe'
-  const [reparaciones, setReparaciones] = useState([]);
-  const [modoOscuro, setModoOscuro] = useState(false);
+  //Estado para mostrar formulario de carga o informe de trabajos
+  const [vista, setVista] = useState("form");
+  //Estado elevado para cargar reparaciones. Verifica que haya reparaciones
+  //En el Local Storage
+    const [reparaciones, setReparaciones] = useState(() => {
+    const reparacionesGuardadas = localStorage.getItem('reparaciones');
+    return reparacionesGuardadas ? JSON.parse(reparacionesGuardadas) : [];
+  });
+  
+  // Estado de modo oscuro - Claro. Verifica si hay modo guardado en Local Storage
+  const [modoOscuro, setModoOscuro] = useState(() => {
+    const modoGuardado = localStorage.getItem('modoOscuro');
+    return modoGuardado ? JSON.parse(modoGuardado) : false;
+  });
+
+  // Efecto para guardar reparaciones en localStorage cuando cambia el estado
+  useEffect(() => {
+    localStorage.setItem('reparaciones', JSON.stringify(reparaciones));
+  }, [reparaciones]);
+
+  // Efecto para guardar modo oscuro en localStorage cuando cambia
+  useEffect(() => {
+    localStorage.setItem('modoOscuro', JSON.stringify(modoOscuro));
+  }, [modoOscuro]);
+
 
   const handleEnter = () => {
     setShowHero(false);
