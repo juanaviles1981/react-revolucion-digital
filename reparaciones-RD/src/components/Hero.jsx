@@ -1,5 +1,6 @@
 import { useState } from "react";
-export const HeroSection = ({ onEnter }) => {
+
+export default function Hero ({ onEnter }) {
     const [isHovered, setIsHovered] = useState(false);
   
     const heroStyle = {

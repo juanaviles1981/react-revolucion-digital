@@ -1,12 +1,53 @@
-# React + Vite
+# TECNO Reparaciones
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación web para gestionar reparaciones de dispositivos electrónicos (celular, PC, notebook, tablet). Permite registrar, editar, filtrar y eliminar reparaciones de forma sencilla y con una interfaz moderna.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tecnologías utilizadas
 
-## Expanding the ESLint configuration
+- React (Hooks y componentes funcionales)
+- CSS modularizado con estilos personalizados
+- React Icons para mostrar iconos según tipo de dispositivo
+- Manejo de estado local con persistencia en `localStorage`
+- Modo oscuro para una mejor experiencia visual
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Estructura del proyecto
+
+/src
+/components
+Hero.jsx
+Navbar.jsx
+ReparacionesForm.jsx
+ReparacionesInforme.jsx
+ReparacionesCard.jsx
+/styles
+ReparacionesForm.css
+ReparacionesInforme.css
+ReparacionesCard.css
+Navbar.css
+App.jsx
+main.jsx
+
+---
+
+## Funcionalidades principales
+
+- Registro de reparaciones con formulario intuitivo y validación básica.
+- Visualización de reparaciones en formato card, con filtros por estado e importancia.
+- Edición inline de reparaciones para modificar los datos rápidamente.
+- Eliminación de registros con botón dedicado.
+- Persistencia automática de datos en `localStorage` para mantener la información entre sesiones.
+- Soporte para modo oscuro con estilos adaptados.
+- Iconos representativos para cada tipo de dispositivo reparado.
+
+---
+
+## Cómo ejecutar el proyecto
+   git clone <URL-del-repositorio>
+   npm install
+   npm run dev
+   Abrir la app en el navegador en la dirección que indique la terminal (generalmente http://localhost:3000)
+
