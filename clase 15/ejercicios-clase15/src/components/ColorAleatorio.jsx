@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const ColorAleatorio = () => {
   const colores = ["red", "blue", "green", "yellow", "purple", "orange"];
@@ -6,11 +6,18 @@ const ColorAleatorio = () => {
     return colores[Math.floor(Math.random() * colores.length)];
   };
 
-  const [color, setColor] = useState(obtenerColorAleatorio());
+  // Empezamos con un color fijo para evitar hydration mismatch
+  const [color, setColor] = useState("red");
+
+  // Solo después de que el componente se monte, generamos el color aleatorio
+  useEffect(() => {
+    setColor(obtenerColorAleatorio());
+  }, []);
 
   const cambiarColor = () => {
     setColor(obtenerColorAleatorio());
   };
+
   return (
     <>
       <h2>Ejercicio 1 - Colores random</h2>
